@@ -9,8 +9,8 @@
     <AssemblyName>Com.Latipium.Template</AssemblyName>
     <ReleaseVersion>1.0</ReleaseVersion>
     <Description>A template for modules developers to use as a starting point for their modules</Description>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +22,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="${SolutionDir}/packages/CommandWrapper.1.0/bin/command-wrapper.exe MONO_PATH=${SolutionDir}/packages/CommandLineParser.1.9.71/lib/net45/:${SolutionDir}/packages/GitSharp.0.3/lib/:${SolutionDir}/packages/log4net.2.0.5/lib/net45-full/:${SolutionDir}/packages/Microsoft.Web.Xdt.2.1.1/lib/net40/:${SolutionDir}/packages/Newtonsoft.Json.9.0.1/lib/net45/:${SolutionDir}/packages/NuGet.Core.2.12.0/lib/net40-Client/:${SolutionDir}/packages/SharpZipLib.0.86.0/lib/20/:${SolutionDir}/packages/Tamir.SharpSSH.1.1.1.13/lib/:${SolutionDir}/packages/Winterdom.IO.FileMap.2.0.2.0/lib/ PATH=${SolutionDir}/packages/CommandLineParser.1.9.71/lib/net45/;${SolutionDir}/packages/GitSharp.0.3/lib/;${SolutionDir}/packages/log4net.2.0.5/lib/net45-full/;${SolutionDir}/packages/Microsoft.Web.Xdt.2.1.1/lib/net40/;${SolutionDir}/packages/Newtonsoft.Json.9.0.1/lib/net45/;${SolutionDir}/packages/NuGet.Core.2.12.0/lib/net40-Client/;${SolutionDir}/packages/SharpZipLib.0.86.0/lib/20/;${SolutionDir}/packages/Tamir.SharpSSH.1.1.1.13/lib/;${SolutionDir}/packages/Winterdom.IO.FileMap.2.0.2.0/lib/ -- ${SolutionDir}/packages/Com.Latipium.DevTools.1.0.6154.41304/bin/Com.Latipium.DevTools.exe version -C ${SolutionDir} AssemblyVersion.cs" workingdir="${SolutionDir}/packages/Com.Latipium.DevTools.1.0.6154.41304/etc/" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -43,12 +48,17 @@
     <DocumentationFile>bin\Prerelease\Com.Latipium.Template.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AssemblyVersion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -58,4 +68,7 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>
