@@ -4,4 +4,4 @@ mono:
 install:
 - nuget restore
 script:
-- xbuild /p:Configuration=CI Com.Latipium.Template.sln
+- xbuild /t:Configuration=CIBuild *.csproj
