@@ -4,4 +4,4 @@ mono:
 install:
 - nuget restore
 script:
-- xbuild /t:Configuration=CIBuild *.csproj
+- ./.ci.sh
