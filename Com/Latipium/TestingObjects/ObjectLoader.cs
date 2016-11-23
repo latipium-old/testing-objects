@@ -10,6 +10,9 @@ namespace Com.Latipium.TestingObjects {
 	/// Loads the testing objects into Latipium.
 	/// </summary>
 	public class ObjectLoader : AbstractLatipiumLoader {
+        /// <summary>
+        /// Loads the object.
+        /// </summary>
 		public override void Load() {
 			LatipiumModule worldObjects = ModuleFactory.FindModule("Com.Latipium.Modules.World.Objects");
 			Action<LatipiumObject> load = worldObjects.GetProcedure<LatipiumObject>("LoadObject");
