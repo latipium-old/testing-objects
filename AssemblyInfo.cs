@@ -24,8 +24,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security;
 
 [assembly: AssemblyTitle("Com.Latipium.Template")]
 [assembly: AssemblyDescription("A template for modules developers to use as a starting point for their modules")]
@@ -43,3 +45,6 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: CLSCompliant(true)]
